@@ -21,10 +21,6 @@ app.post('/api/usuarios', async (req, res) => {
   }
 });
 
-app.get('/', (req, res) => {
-  res.send('🚀 Backend de Felinanzas funcionando correctamente');
-});
-
 app.listen(5000, () => {
   console.log('Servidor backend corriendo en http://localhost:5000');
 });

@@ -8,7 +8,8 @@ const Formulario = () => {
     correo: ''
   });
 
-  const [estado, setEstado] = useState(''); // Nuevo: estado visual
+  const [estado, setEstado] = useState('');
+  const [enviando, setEnviando] = useState(false); // Nuevo: controla el botón
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,8 +18,9 @@ const Formulario = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setEstado('Enviando...');
+    setEnviando(true);
     try {
-      const res = await fetch('http://localhost:5000/api/usuarios', {
+      const res = await fetch('https://stunning-space-acorn-xgj6p7rgg47hvgjw-5000.app.github.dev/api/usuarios', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -32,6 +34,8 @@ const Formulario = () => {
     } catch (err) {
       console.error(err);
       setEstado('Error de conexión con el servidor 🛠️');
+    } finally {
+      setEnviando(false);
     }
   };
 
@@ -63,7 +67,9 @@ const Formulario = () => {
           onChange={handleChange}
           required
         />
-        <button type="submit">Enviar</button>
+        <button type="submit" disabled={enviando}>
+          {enviando ? 'Enviando...' : 'Enviar'}
+        </button>
       </form>
       {estado && <p className="estado">{estado}</p>}
     </div>

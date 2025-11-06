@@ -1,0 +1,89 @@
+/* Contenedor principal */
+.formulario-container {
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box; /* 👈 evita que el padding rompa el ancho */
+  margin: 0 auto;
+  padding: 28px 24px;
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  animation: fadeIn 1s ease-in;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+/* Título */
+.formulario-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #222;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Inputs */
+.formulario input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: #fafafa;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76,175,80,0.2);
+  outline: none;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* Botón */
+.formulario button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #4CAF50, #43a047);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.formulario button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(67,160,71,0.3);
+}
+
+.formulario button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(67,160,71,0.2);
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Estado */
+.estado {
+  margin-top: 14px;
+  text-align: center;
+  font-weight: 600;
+  color: #388e3c;
+  font-size: 14px;
+}

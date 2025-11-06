@@ -1,0 +1,51 @@
+/* Posicionamiento fijo en esquina inferior derecha */
+.navbar-floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffffffcc;
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  padding: 10px 16px;
+  z-index: 1000;
+  animation: fadeInNavbar 1s ease-out;
+}
+
+/* Lista horizontal */
+.navbar-links {
+  list-style: none;
+  display: flex;              /* 👈 ahora horizontal */
+  flex-direction: row;        /* 👈 izquierda a derecha */
+  gap: 14px;                  /* espacio entre enlaces */
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo de cada enlace */
+.navbar-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  background: #4CAF50;
+  color: #fff;
+}
+
+/* Animación de entrada */
+@keyframes fadeInNavbar {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
